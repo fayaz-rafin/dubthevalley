@@ -1,11 +1,13 @@
 import whisper
 from googletrans import Translator
 from gtts import gTTS
+from moviepy.editor import VideoFileClip, AudioFileClip, concatenate_videoclips
+import os
 
 
 # Load the Whisper model and transcribe audio
 model = whisper.load_model("base")
-result = model.transcribe("sample-0.mp3")
+result = model.transcribe("default.mp4")
 transcribed_text = result["text"]
 print(transcribed_text)
 # Translate the text using the Google Translate API
@@ -30,3 +32,8 @@ with open("translated.txt", "w", encoding="utf-8") as f:
 myobj = gTTS(text=translated_text, lang=target_language, slow=False)
 
 myobj.save("welcome.mp3")
+title = input("Enter a title: ")
+video_clip = VideoFileClip("default.mp4")
+audio_clip = AudioFileClip("welcome.mp3")
+final_clip = video_clip.set_audio(audio_clip)
+final_clip.write_videofile(title + ".mp4")
