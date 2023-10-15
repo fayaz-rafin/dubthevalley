@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.color1 {
+    background-image: linear-gradient(to right,
+            #436aa3,
+            #6e76a8,
+            #8e83ac,
+            #a693b1,
+            #b8a5b7);
+    border-bottom: 2px solid black;
+}
+
+.color2 {
+    padding: 10px;
+    background-image: linear-gradient(to right,
+            #436aa3,
+            #606ba6,
+            #796ba5,
+            #8e6ba3,
+            #a16c9e);
+    border-bottom: 2px solid black;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: white;
+    display: flex;
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+  position: relative;
+  width: 100px;
+  height: 70px;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    margin: 20px;
+    /* Add spacing between the buttons */
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.center-paragraph {
+    text-align: center;
+    font-weight: 800;
+    font-size: xx-large;
+    margin-top: 50px;
+    padding: 70px;
+}
+
+.h1 {
+    text-align: center;
+    font-weight: 800;
+    font-size: large;
+    margin: 50px;
+}
+
+.text-wrapper {
+    text-align: center;
+}
+
+.sp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 80px;
+}
+
+.text {
+    flex: 1 1 auto;
+}
+
+.picture {
+    flex: 0 0 50%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.ps {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 70px;
+}
+
+.text {
+    flex: 1 1 auto;
+}
+
+.picture {
+    flex: 0 0 50%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.edimages {
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.edu {
+    background-image: linear-gradient(to right,
+            #436aa3,
+            #7078b0,
+            #9488bc,
+            #b599c6,
+            #d2abd0);
+    padding: 10px;
+}
+
+#About {
+    scroll-behavior: smooth;
+}
+
+.f {
+    padding: 20px;
+    text-align: center;
+    background-image: linear-gradient(to right,
+            #3c5e8f,
+            #3675a2,
+            #358cb1,
+            #3fa3bd,
+            #54b9c6);
+    color: white;
+    border-top: 2px solid black;
+}
+

@@ -11,8 +11,11 @@ from moviepy.editor import *
 import json
 
 app = Flask(__name__)
-
+app.config['static'] = 'static'
 #openai.api_key = "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"
+if app.debug:
+    app.add_url_rule('/static/styles.css', 'static', build_only=True)
+
 
 supported_languages = [
     "English",  "French", "Mandarin (Mainland China)", "Mandarin (Taiwan)", "Portuguese", "Spanish"
@@ -70,7 +73,7 @@ def translate_video(submit_file, target_language):
     # Create path
     #file_path = os.path.join(current_directory, submit_file.filename)
 
-    file_path = os.path.join(current_directory, "dubbify", "temp.mp4")
+    file_path = os.path.join(current_directory, "temp.mp4")
 
     # Save the uploaded file to the local directory
     submit_file.save(file_path)
@@ -106,7 +109,7 @@ def translate_video(submit_file, target_language):
     #print("\n HI HIH IHIH" + parent_dir)
     #print(current_directory)
     #video_path = f"{parent_dir}/result.mp4"
-    video_path = "dubbify/result.mp4"
+    video_path = "result.mp4"
     video.write_videofile(video_path)
 
     return video_path

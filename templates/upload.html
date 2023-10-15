@@ -1,42 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MP4 to MP3 Converter</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<title>Dub The Valley</title>
+<link rel="stylesheet" href= "{{ url_for('static',filename='styles.css') }}">
 </head>
-<body>
-    <h1>MP4 to MP3 Converter</h1>
-    <form method="POST" action="/upload" enctype="multipart/form-data">
-        <label for="file">Choose an MP4 file to convert:</label>
-        <input type="file" id = "file" name="file" accept = ".mp4" required>
 
-        <label for="language">Select the language:</label>
-        <select id="language" name="language">
-            {% for lang in supported_languages %}
-                <option value="{{ lang }}">{{ lang }}</option>
-            {% endfor %} <!---->
-        </select>
+<header class="header">
+<nav class="navbar">
+    <div class="logo">
+    </div>
+    <a href="#Home">Home</a>
+    <a href="#About">About</a>
+    <a href="#Educate">Education</a>
+        <img class="logo" src="/static/DTV_Logo.png" alt="logo1">
 
-        <input type="hidden" name="language" value=""> <!-- Hidden input for language -->
 
-        <input type="submit" value="Upload and Translate">
+</nav>
+</header>
+  
+<!--1st Section-->
+  <main>
+    <div id="Home" class="color1">
+    <div class="center-paragraph">
+    <p>Revolutionize the way you communicate!.</p>
+</div>
+    <div class="button-container">
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+            <label for="file">Choose an MP4 file to convert:</label>
+            <input type="file" id = "file" name="file" accept = ".mp4" required>
+    
+            <label for="language">Select the language:</label>
+            <select id="language" name="language">
+                {% for lang in supported_languages %}
+                    <option value="{{ lang }}">{{ lang }}</option>
+                {% endfor %} <!---->
+            </select>
+    
+            <input type="hidden" name="language" value=""> <!-- Hidden input for language -->
+    
+            <input type="submit" value="Upload and Translate">
+    
+        </form>
+        <button type="button">Button 1</button>
+        <button type="button">Button 2</button>
+    </div>
+    <div class="button-container">
+    <button type="button">Apply</button>
+    </div>
+  </div>
 
-    </form>
+  <!--2nd Section-->
 
-    <p>{{ message }}</p>
+<div id="About" class="color2">
+<h1 class="h1">About Dub The Valley</h1>
+<p class="text-wrapper">Dub The Valley is the solution for translating a video to any other language! Through our software, we can connect the world with digital videos. Just submit your file, select your language and then submit!</p>
+<div class="sp">
+<div class="text">
+  <h1>This is the text</h1>
+  <p>This is some text that goes with the picture.</p>
+</div>
+<div class="picture">
+  <img src="image.jpg" alt="This is a picture">
+</div>
+</div>
 
-    {% if video_path %}
-    <video width="640" height="360" controls>
-        <source src="{{ video_path }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    {% endif %}
 
-    <script>
-        document.getElementById('language').addEventListener('change', function () {
-            document.getElementsByName('language')[0].value = this.value;
-        });
-    </script>
-</body>
+<div class="ps">
+<div class="text">
+  <h1>This is the text</h1>
+  <p>This is some text that goes with the picture.</p>
+</div>
+<div class="picture">
+  <img src="image.jpg" alt="This is a picture">
+</div>
+</div>
+
+</div>
+
+
+<!-- 3rd Section-->
+
+
+<div id="Educate" class="edu">
+<h1 class="h1">Education</h1>
+<p class="text-wrapper">Lorem ipsum dolor sit amet consectetur. Cursus arcu sit nec neque. Nam euismod semper non ligula. Ullamcorper auctor in adipiscing molestie pretium sagittis.</p>
+  
+<div class="edimages">
+<img src="" alt="edimage1" width="50px" height="50px">
+<img src="" alt="edimage2" width="50px" height="50px">
+<img src="" alt="edimage3" width="50px" height="50px">
+</div>
+</div>
+</main>
+
+
+
+<!--4th Section-->
+<footer>
+<div class="f">
+<p>Â© 2023 Dub The Valley. All Rights Reserved</p>
+</div>
+</footer>
+ 
+  </body>
 </html>
+
+
+<!--rgba(118,197,241,1) - light blue 
+    rgba(3,60,91,1) - dark blue
+    rgba(146,232,180,1) - green
+    
+-->
