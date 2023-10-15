@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP4 to MP3 Converter</title>
+</head>
+<body>
+    <h1>MP4 to MP3 Converter</h1>
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+        <label for="file">Choose an MP4 file to convert:</label>
+        <input type="file" id = "file" name="file" accept = ".mp4" required>
+
+        <label for="language">Select the language:</label>
+        <select id="language" name="language">
+            {% for lang in supported_languages %}
+                <option value="{{ lang }}">{{ lang }}</option>
+            {% endfor %} <!---->
+        </select>
+
+        <input type="hidden" name="language" value=""> <!-- Hidden input for language -->
+
+        <input type="submit" value="Upload and Translate">
+
+    </form>
+
+    <p>{{ message }}</p>
+
+    {% if video_path %}
+    <video width="640" height="360" controls>
+        <source src="{{ video_path }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    {% endif %}
+
+    <script>
+        document.getElementById('language').addEventListener('change', function () {
+            document.getElementsByName('language')[0].value = this.value;
+        });
+    </script>
+</body>
+</html>
